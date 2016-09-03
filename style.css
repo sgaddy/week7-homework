@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: gray;
+}
+.title{
+    background-color: black;
+    font-size: xx-large;
+    color: white;
+}
+.container2 {
+    position: relative;
+    float: left;	
+    display: inline;
+    
+}   
+.right {
+    float: right;
+    float: center;	
+    display: inline;
+    width: 100%;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+   
+    text-align: left;
+    padding: 8px;
+
+}
+tr {
+     border-bottom: 1px solid #dddddd;   
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#overlay_form{
+position: absolute;
+border: 5px solid gray;
+padding: 10px;
+background: white;
+width: 80%;
+height: 80%;
+}
+

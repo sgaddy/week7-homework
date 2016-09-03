@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Train Schedule</title>
+
+	<!-- Bootstrap CDN-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link rel='stylesheet' href='style.css' type='text/css'/>
+</head>
+<body>
+<div class="container">
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body title">
+					<h3 class="text-left"><span> <img src="train.jpg" alt="Train" height="42" width="42"> </span><strong>Train Schedules</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Current Product -->
+	<div class="row">
+		<div class="col-md-12 ">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12 ">
+							<div class="panel panel-default container2 ">
+								<div class="panel-heading">
+									<h3 class="panel-title">Add Train</h3>
+								</div>
+								<div class="panel-body">
+									<form>
+										<div class="form-group">
+											<label for="">Train Name</label>
+											<input type="text" class="form-control" id="trainNameInput">
+										</div>
+					<div class="form-group">
+						<label for="">Destination</label>
+						<input type="text" class="form-control" id="destinationInput">
+					</div>
+
+					<div class="form-group">
+						<label for="">First Train Time -- in military time</label>
+						<input type="text" class="form-control" id="timeInput">
+					</div>
+
+					<div class="form-group">
+						<label for="">Frequency -- in minutes</label>
+						<input type="text" class="form-control" id="frequencyInput">
+					</div>
+					
+					<button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+					</form>
+								</div>
+							</div>
+						<div class="col-md-8 ">
+							<div class="panel panel-default right ">
+								<div class="panel-heading">
+									<h3 class="panel-title">Current Train Schedule</h3>
+								</div>
+								<div class="panel-body ">
+									
+									<table  id="trainTable">
+									<thead>
+								<tr>
+								<th>Train Name</th>
+								<th>Destination</th>
+								<th>Frequecy (min)</th>
+								<th>Next Arrival</th>
+								<th>Minutes Away</th>								
+							</tr>
+						</thead>
+						<div>
+						<tbody id="trainTableBody">
+							
+						</tbody>
+						</div>
+					</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="overlay_form" style="display:none">
+	<div class="form-group">
+					<label for="">Train Name</label>
+					<input type="text" class="form-control" id="trainNamemodify">
+					</div>
+					<div class="form-group">
+						<label for="">Destination</label>
+						<input type="text" class="form-control" id="destinationmodify">
+					</div>
+
+					<div class="form-group">
+						<label for="">First Train Time -- in military time</label>
+						<input type="text" class="form-control" id="timemodify">
+					</div>
+
+					<div class="form-group">
+						<label for="">Frequency -- in minutes</label>
+						<input type="text" class="form-control" id="frequencymodify">
+					</div>
+					
+					<button type="submit" class="btn btn-primary" id="modifyTrainBtn">Submit</button>
+					<button type="submit" class="btn btn-primary" id="close">Close</button>
+	</form>
+
+	<!-- Javascript -->
+<script src="timesheet-logic.js"></script>
+
+</body>
+</html>
